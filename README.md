@@ -12,12 +12,6 @@ A modern and responsive job search application built with **React**, **React Rou
 
 ---
 
-## Demo
-
-[Live Demo Link](#)  
-*(Replace `#` with the link to your deployed application.)*
-
----
 
 ## Tech Stack
 
