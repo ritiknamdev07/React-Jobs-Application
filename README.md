@@ -1,8 +1,45 @@
-# React + Vite
+# React Jobs Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive job search application built with **React**, **React Router**, and **Tailwind CSS**. This project demonstrates how to create a user-friendly interface for searching and viewing detailed job listings.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Job Listings**: View a list of available jobs.
+- **Detailed Job View**: Click on a job to see more details.
+- **Responsive Design**: Fully optimized for all screen sizes.
+- **Navigation**: Smooth and efficient navigation using React Router.
+- **Tailwind CSS**: Styled using the utility-first CSS framework for clean and maintainable code.
+
+---
+
+## Demo
+
+[Live Demo Link](#)  
+*(Replace `#` with the link to your deployed application.)*
+
+---
+
+## Tech Stack
+
+- **React**: Front-end framework.
+- **React Router**: For managing navigation and routes.
+- **Tailwind CSS**: For styling the application.
+- **JavaScript (ES6+)**: Logic and interactivity.
+
+---
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/react-jobs-application.git
+
+2.  Navigate to the project directory:
+      cd react-jobs-application
+
+3. Install dependencies: npm install
+
+4. Start the server: npm run server
+
+5. Start the development server: npm run dev
+
