@@ -7,6 +7,7 @@ A modern and responsive job search application built with **React**, **React Rou
 - **Job Listings**: View a list of available jobs.
 - **Detailed Job View**: Click on a job to see more details.
 - **Responsive Design**: Fully optimized for all screen sizes.
+- **Features**: Add, Edit, and Delete jobs.
 - **Navigation**: Smooth and efficient navigation using React Router.
 - **Tailwind CSS**: Styled using the utility-first CSS framework for clean and maintainable code.
 
