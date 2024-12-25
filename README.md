@@ -35,5 +35,5 @@ A modern and responsive job search application built with **React**, **React Rou
 
 4. Start the server: npm run server
 
-5. Start the development server: npm run dev
+5. Start the development server: npm run dev.
 
