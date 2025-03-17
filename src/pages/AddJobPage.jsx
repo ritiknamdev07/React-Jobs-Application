@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 const AddJobPage = ({ addJobSubmit }) => {
@@ -12,9 +12,19 @@ const AddJobPage = ({ addJobSubmit }) => {
   const [contactEmail, setContactEmail] = useState('');
   const [contactPhone, setContactPhone] = useState('');
   const navigate = useNavigate();
+  const [jobs, setJobs] = useState([]);
+    const getJobs = () => {
+      return JSON.parse(localStorage.getItem("jobs")) || [];
+    };
+  console.log(getJobs());
+  
+    useEffect(() => {
+     setJobs( getJobs())
+    }, []);
   const submitForm = (e) => {
     e.preventDefault();
     const newJob = {
+      id: jobs[0].id+1,
       title,
       type,
       location,

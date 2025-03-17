@@ -4,23 +4,38 @@ import Spinner from "./Spinner";
 
 const JobListings = ({ isHome = false }) => {
   const [jobs, setJobs] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
+  // useEffect(() => {
+  //   const fetchJobs = async () => {
+  //     const apiUrl = isHome ? "/api/jobs?_limit=3" : "/api/jobs";
+  //     try {
+  //       const res = await fetch(apiUrl);
+  //       const data = await res.json();
+  //       setJobs(data);
+  //     } catch (error) {
+  //       alert("error fetching data", error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   fetchJobs();
+  // }, []);
+
+  const getJobs = () => {
+    return JSON.parse(localStorage.getItem("jobs")) || [];
+  };
   useEffect(() => {
-    const fetchJobs = async () => {
-      const apiUrl = isHome ? "/api/jobs?_limit=3" : "/api/jobs";
-      try {
-        const res = await fetch(apiUrl);
-        const data = await res.json();
-        setJobs(data);
-      } catch (error) {
-        alert("error fetching data", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchJobs();
+    const data = getJobs();
+    console.log(data.slice(0,4));
+    
+    if(isHome){
+      setJobs(data.slice(0,4))
+    }else {
+      setJobs(data)
+    }
+    
   }, []);
 
 

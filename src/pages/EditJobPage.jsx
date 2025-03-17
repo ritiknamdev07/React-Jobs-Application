@@ -1,20 +1,29 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import { useLoaderData, useNavigate, useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
 const EditJobPage = ({updateJobSubmit}) => {
     const job = useLoaderData()
+    console.log(job);
+
+      const getJobs = () => {
+          return JSON.parse(localStorage.getItem("jobs")) || [];
+        };
+        useEffect(() => {
+       getJobs()
+        }, []);
+    
     const {id} = useParams()
     const navigate = useNavigate()
-    const [title, setTitle] = useState(job.title);
-    const [type, setType] = useState(job.type);
-    const [location, setLocation] = useState(job.location);
-    const [description, setDescription] = useState(job.description);
-    const [salary, setSalary] = useState(job.salary);
-    const [companyName, setCompanyName] = useState(job.company.companyName);
-    const [companyDescription, setCompanyDescription] = useState(job.company.companyDescription);
-    const [contactEmail, setContactEmail] = useState(job.company.contactEmail);
-    const [contactPhone, setContactPhone] = useState(job.company.contactPhone);
+    const [title, setTitle] = useState(job[0].title);
+    const [type, setType] = useState(job[0].type);
+    const [location, setLocation] = useState(job[0].location);
+    const [description, setDescription] = useState(job[0].description);
+    const [salary, setSalary] = useState(job[0].salary);
+    const [companyName, setCompanyName] = useState(job[0]?.company?.companyName);
+    const [companyDescription, setCompanyDescription] = useState(job[0]?.company?.companyDescription);
+    const [contactEmail, setContactEmail] = useState(job[0]?.company?.contactEmail);
+    const [contactPhone, setContactPhone] = useState(job[0]?.company?.contactPhone);
     const submitForm = (e) => {
         e.preventDefault();
         const updateJob = {
